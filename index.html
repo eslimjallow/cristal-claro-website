@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="description" content="Cristal Claro - Limpieza Profesional de Cristales en Las Palmas. Servicio rápido y económico para viviendas, locales y oficinas.">
+    <meta name="theme-color" content="#0066cc">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Cristal Claro - Limpieza Profesional de Cristales en Las Palmas</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <img src="WhatsApp Image 2026-02-21 at 16.22.26.jpeg" alt="Cristal Claro Logo">
+                </div>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="nav-links">
+                    <a href="#inicio">Inicio</a>
+                    <a href="#servicios">Servicios</a>
+                    <a href="#por-que-elegirnos">Por Qué Elegirnos</a>
+                    <a href="#contacto">Contacto</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-background">
+            <img src="WhatsApp Image 2026-02-21 at 15.53.02.jpeg" alt="Cristal Claro - Limpieza Profesional de Cristales">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">CRISTAL CLARO</h1>
+                <p class="hero-subtitle">Limpieza Profesional de Cristales en Las Palmas</p>
+                <p class="hero-description">Cristales Perfectos a Buen Precio</p>
+                <p class="hero-text">Servicio rápido y económico para viviendas, locales y oficinas.</p>
+                <div class="hero-buttons">
+                    <a href="#contacto" class="btn-primary">
+                        Solicitar Presupuesto Gratis
+                    </a>
+                    <a href="#book-online" class="btn-secondary" onclick="event.preventDefault(); openBookingModal();">
+                        Reservar Online
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicios" class="services">
+        <div class="container">
+            <h2 class="section-title">Nuestros Servicios</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3>Limpieza de Cristales en Viviendas</h3>
+                    <p>Limpieza profesional de cristales en viviendas y apartamentos. Resultados impecables para su hogar.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🪟</div>
+                    <h3>Ventanas de Balcones y Puertas</h3>
+                    <p>Limpieza completa de ventanas, balcones y puertas. Dejamos sus cristales brillantes y transparentes.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏪</div>
+                    <h3>Escaparates de Tiendas y Negocios</h3>
+                    <p>Servicio especializado para escaparates de tiendas y negocios. Imagen profesional garantizada.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏢</div>
+                    <h3>Oficinas, Bares y Restaurantes</h3>
+                    <p>Limpieza profesional para oficinas, bares y restaurantes. Ambiente limpio y acogedor.</p>
+                </div>
+            </div>
+            <p class="services-footer">Servicio puntual, rápido y con resultados brillantes.</p>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="statistics">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number" data-target="500">0</div>
+                    <div class="stat-label">Clientes Satisfechos</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="1000">0</div>
+                    <div class="stat-label">Ventanas Limpiadas</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="5">0</div>
+                    <div class="stat-label">Años de Experiencia</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="98">0</div>
+                    <div class="stat-label">% Satisfacción</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process">
+        <div class="container">
+            <h2 class="section-title">Cómo Trabajamos</h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Contacto</h3>
+                    <p>Contáctenos por WhatsApp o email para solicitar su presupuesto gratuito</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Presupuesto</h3>
+                    <p>Le enviamos un presupuesto detallado sin compromiso en menos de 24 horas</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Limpieza</h3>
+                    <p>Nuestro equipo profesional realiza el trabajo con puntualidad y calidad</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Resultado</h3>
+                    <p>Disfrute de cristales impecables y brillantes. ¡Garantía de satisfacción!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="por-que-elegirnos" class="why-choose-us">
+        <div class="container">
+            <div class="why-choose-content">
+                <div class="why-choose-text">
+                    <h2 class="section-title">¿Por qué elegir Cristal Claro?</h2>
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <span class="check-icon">✔</span>
+                            <div>
+                                <h3>Precios económicos</h3>
+                                <p>Ofrecemos los mejores precios del mercado sin comprometer la calidad.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="check-icon">✔</span>
+                            <div>
+                                <h3>Atención rápida por WhatsApp</h3>
+                                <p>Respuesta inmediata a sus consultas y solicitudes de presupuesto.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="check-icon">✔</span>
+                            <div>
+                                <h3>Servicio puntual y profesional</h3>
+                                <p>Equipo profesional que cumple con los horarios acordados.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="check-icon">✔</span>
+                            <div>
+                                <h3>Ideal para mantenimiento semanal o mensual</h3>
+                                <p>Planes de mantenimiento regulares para mantener sus cristales siempre perfectos.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Lo Que Dicen Nuestros Clientes</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Servicio excelente y muy profesional. Las ventanas quedaron perfectas. Muy recomendable."</p>
+                    <div class="testimonial-author">
+                        <strong>María G.</strong>
+                        <span>Las Palmas</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Rápidos, puntuales y con precios muy competitivos. Volveré a contratarlos sin duda."</p>
+                    <div class="testimonial-author">
+                        <strong>Juan P.</strong>
+                        <span>Las Palmas</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Excelente atención por WhatsApp y trabajo impecable. Muy contento con el resultado."</p>
+                    <div class="testimonial-author">
+                        <strong>Ana M.</strong>
+                        <span>Las Palmas</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title">Preguntas Frecuentes</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Cuánto cuesta el servicio?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>El precio varía según el tamaño y tipo de propiedad. Ofrecemos presupuestos gratuitos sin compromiso. Contáctenos para una evaluación personalizada.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Cuánto tiempo tarda el servicio?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Depende del tamaño de la propiedad. Una vivienda promedio puede tardar entre 1-2 horas. Para negocios y oficinas, el tiempo varía según las dimensiones.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Necesito estar presente durante la limpieza?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No es necesario, pero puede estar presente si lo desea. Nuestro equipo es profesional y de confianza. Trabajamos de forma independiente y eficiente.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Ofrecen servicios de mantenimiento regular?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sí, ofrecemos planes de mantenimiento semanal, quincenal o mensual con precios especiales para clientes regulares.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Qué métodos de pago aceptan?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Aceptamos efectivo, transferencia bancaria y pago por Bizum. El pago se realiza al finalizar el servicio.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Request Form Section -->
+    <section id="contacto" class="contact">
+        <div class="container">
+            <h2 class="section-title">Solicitar Presupuesto Gratis</h2>
+            <p class="section-subtitle">Complete el formulario y le responderemos en breve con un precio económico</p>
+            
+            <div class="contact-wrapper">
+                <div class="quote-form-container">
+                    <form id="quoteForm" class="quote-form">
+                        <div class="form-group">
+                            <label for="nombre">Nombre Completo *</label>
+                            <input type="text" id="nombre" name="nombre" required placeholder="Su nombre">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required placeholder="su@email.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="telefono">Teléfono</label>
+                            <input type="tel" id="telefono" name="telefono" placeholder="+34 600 000 000">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="tipoPropiedad">Tipo de Propiedad *</label>
+                            <select id="tipoPropiedad" name="tipoPropiedad" required>
+                                <option value="">Seleccione una opción</option>
+                                <option value="Piso">Piso</option>
+                                <option value="Casa">Casa</option>
+                                <option value="Local">Local / Negocio</option>
+                                <option value="Oficina">Oficina</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="numeroVentanas">Número Aproximado de Ventanas *</label>
+                            <input type="number" id="numeroVentanas" name="numeroVentanas" required min="1" placeholder="Ej: 10">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="mensaje">Información Adicional (opcional)</label>
+                            <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cualquier información adicional que considere importante..."></textarea>
+                        </div>
+                        
+                        <div class="form-note">
+                            <p>💡 <strong>Consejo:</strong> Puede enviar fotos o vídeos de sus ventanas o del servicio que necesita cuando envíe el email. Esto me ayudará a darle un presupuesto más preciso.</p>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary btn-submit">
+                            Enviar Solicitud de Presupuesto
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="contact-info">
+                    <h3>Información de Contacto</h3>
+                    <div class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <div>
+                            <h4>Ubicación</h4>
+                            <p>Servicio en Las Palmas de Gran Canaria</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📲</span>
+                        <div>
+                            <h4>WhatsApp / Teléfono</h4>
+                            <p><a href="https://wa.me/34663537476" target="_blank" rel="noopener noreferrer">+34 663 537 476</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📧</span>
+                        <div>
+                            <h4>Email</h4>
+                            <p><a href="mailto:cristalclaro91@gmail.com">cristalclaro91@gmail.com</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="booking-modal">
+        <div class="booking-modal-content">
+            <div class="booking-modal-header">
+                <h2>Reservar Servicio Online</h2>
+                <button class="booking-close" onclick="closeBookingModal()" aria-label="Cerrar">&times;</button>
+            </div>
+            <form id="bookingForm" class="booking-form">
+                <div class="form-section">
+                    <h3>Información de Contacto</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="bookingNombre">Nombre Completo *</label>
+                            <input type="text" id="bookingNombre" name="bookingNombre" required placeholder="Su nombre completo">
+                        </div>
+                        <div class="form-group">
+                            <label for="bookingEmail">Email *</label>
+                            <input type="email" id="bookingEmail" name="bookingEmail" required placeholder="su@email.com">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="bookingTelefono">Teléfono *</label>
+                            <input type="tel" id="bookingTelefono" name="bookingTelefono" required placeholder="+34 600 000 000">
+                        </div>
+                        <div class="form-group">
+                            <label for="bookingDireccion">Dirección del Servicio *</label>
+                            <input type="text" id="bookingDireccion" name="bookingDireccion" required placeholder="Calle, número, Las Palmas">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Detalles del Servicio</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="bookingTipoPropiedad">Tipo de Propiedad *</label>
+                            <select id="bookingTipoPropiedad" name="bookingTipoPropiedad" required>
+                                <option value="">Seleccione</option>
+                                <option value="Piso">Piso</option>
+                                <option value="Casa">Casa</option>
+                                <option value="Local">Local / Negocio</option>
+                                <option value="Oficina">Oficina</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="bookingNumeroVentanas">Número de Ventanas *</label>
+                            <input type="number" id="bookingNumeroVentanas" name="bookingNumeroVentanas" required min="1" placeholder="Ej: 10">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="bookingFrecuencia">Frecuencia del Servicio *</label>
+                        <select id="bookingFrecuencia" name="bookingFrecuencia" required>
+                            <option value="">Seleccione frecuencia</option>
+                            <option value="Una vez">Una vez (Servicio único)</option>
+                            <option value="Semanal">Semanal (Cada semana)</option>
+                            <option value="Quincenal">Quincenal (Cada 2 semanas)</option>
+                            <option value="Mensual">Mensual (Cada mes)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Fecha y Hora Preferida</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="bookingFecha">Fecha Preferida *</label>
+                            <input type="date" id="bookingFecha" name="bookingFecha" required min="">
+                        </div>
+                        <div class="form-group">
+                            <label for="bookingHora">Hora Preferida *</label>
+                            <select id="bookingHora" name="bookingHora" required>
+                                <option value="">Seleccione fecha primero</option>
+                            </select>
+                            <small class="form-hint">Horario: Lunes-Jueves 9:30-19:00 | Viernes-Domingo 7:00-19:00</small>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="bookingHoraAlternativa">Hora Alternativa (opcional)</label>
+                        <select id="bookingHoraAlternativa" name="bookingHoraAlternativa">
+                            <option value="">Seleccione hora alternativa</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Información Adicional</h3>
+                    <div class="form-group">
+                        <label for="bookingNotas">Notas Especiales (opcional)</label>
+                        <textarea id="bookingNotas" name="bookingNotas" rows="4" placeholder="Acceso especial, instrucciones, preferencias, etc."></textarea>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="bookingConfirmacion" name="bookingConfirmacion" required>
+                            <span>Acepto que me contacten para confirmar la reserva *</span>
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-primary btn-submit">
+                    Confirmar Reserva
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/34663537476" class="floating-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" fill="currentColor"/>
+        </svg>
+        <span>WhatsApp</span>
+    </a>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CRISTAL CLARO</h3>
+                    <p>Limpieza Profesional de Cristales en Las Palmas de Gran Canaria</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <a href="#inicio">Inicio</a>
+                    <a href="#servicios">Servicios</a>
+                    <a href="#por-que-elegirnos">Por Qué Elegirnos</a>
+                    <a href="#contacto">Contacto</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p>📲 +34 663 537 476</p>
+                    <p>📧 cristalclaro91@gmail.com</p>
+                    <p>📍 Las Palmas de Gran Canaria</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Cristal Claro. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
