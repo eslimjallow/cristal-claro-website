@@ -28,7 +28,7 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 clamp(15px, 4vw, 20px);
     width: 100%;
 }
 
@@ -111,7 +111,7 @@ html, body {
     align-items: center;
 }
 
-.nav-links a {
+.nav-links > a {
     text-decoration: none;
     color: var(--text-dark);
     font-weight: 500;
@@ -122,6 +122,59 @@ html, body {
     display: flex;
     align-items: center;
     -webkit-tap-highlight-color: transparent;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-left: 1rem;
+    padding-left: 1rem;
+    border-left: 1px solid var(--border-color);
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--bg-light);
+    transition: all 0.3s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.social-icon:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.social-icon svg {
+    width: 20px;
+    height: 20px;
+    transition: all 0.3s ease;
+}
+
+/* TikTok Icon - Black color */
+.social-icon[aria-label="TikTok"] {
+    color: #000000;
+}
+
+.social-icon[aria-label="TikTok"]:hover {
+    background: #000000;
+    color: #ffffff;
+}
+
+/* Instagram Icon - Instagram gradient colors */
+.social-icon[aria-label="Instagram"] {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    color: #ffffff;
+}
+
+.social-icon[aria-label="Instagram"]:hover {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    opacity: 0.9;
 }
 
 .nav-links a:hover {
@@ -1163,13 +1216,38 @@ section {
 }
 
 /* Responsive Design */
+/* Tablet and Medium Screens */
 @media (max-width: 1024px) {
     .container {
-        padding: 0 15px;
+        padding: 0 clamp(15px, 3vw, 20px);
     }
     
     section {
         padding: clamp(3rem, 8vw, 5rem) 0;
+    }
+    
+    .hero-title {
+        font-size: clamp(2.5rem, 7vw, 3.5rem);
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+/* Small Tablets */
+@media (max-width: 900px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .process-steps {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -1199,7 +1277,7 @@ section {
         transform: translateX(0);
     }
 
-    .nav-links a {
+    .nav-links > a {
         padding: 1rem;
         width: 100%;
         border-bottom: 1px solid var(--border-color);
@@ -1207,8 +1285,19 @@ section {
         min-height: 50px;
     }
 
-    .nav-links a:last-child {
-        border-bottom: none;
+    .social-links {
+        margin-left: 0;
+        padding-left: 0;
+        border-left: none;
+        border-top: 1px solid var(--border-color);
+        padding-top: 1rem;
+        margin-top: 1rem;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .nav-links > a:last-of-type {
+        border-bottom: 1px solid var(--border-color);
     }
 
     .logo img {
@@ -1273,6 +1362,66 @@ section {
 
     .service-card h3 {
         font-size: 1.2rem;
+    }
+}
+
+/* Extra Small Devices */
+@media (max-width: 360px) {
+    .hero-title {
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+    }
+    
+    .hero-description {
+        font-size: 1.1rem;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .btn-primary,
+    .btn-secondary {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.95rem;
+    }
+    
+    .service-card {
+        padding: 1.25rem;
+    }
+    
+    .quote-form-container {
+        padding: 1.25rem;
+    }
+}
+
+/* Extra Small Devices */
+@media (max-width: 360px) {
+    .hero-title {
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+    }
+    
+    .hero-description {
+        font-size: 1.1rem;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .btn-primary,
+    .btn-secondary {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.95rem;
+    }
+    
+    .service-card {
+        padding: 1.25rem;
+    }
+    
+    .quote-form-container {
+        padding: 1.25rem;
     }
 }
 
@@ -1481,5 +1630,53 @@ section {
 @media (min-width: 1400px) {
     .container {
         max-width: 1320px;
+    }
+}
+
+/* Extra Large screens */
+@media (min-width: 1920px) {
+    .container {
+        max-width: 1600px;
+    }
+}
+
+/* Ultra-wide screens */
+@media (min-width: 2560px) {
+    .container {
+        max-width: 2000px;
+    }
+}
+
+/* Ensure images are always responsive */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Better touch targets for mobile */
+@media (max-width: 768px) {
+    a, button, input, select, textarea {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    .social-icon {
+        width: 44px;
+        height: 44px;
+    }
+}
+
+/* Print styles */
+@media print {
+    .navbar,
+    .floating-whatsapp,
+    .mobile-menu-toggle {
+        display: none;
+    }
+    
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
     }
 }

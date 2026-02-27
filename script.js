@@ -171,7 +171,7 @@ document.addEventListener('DOMContentLoaded', function() {
             );
             
             // Create mailto link
-            const mailtoLink = 'mailto:eslimjallow@gmail.com?subject=' + subject + '&body=' + body;
+            const mailtoLink = 'mailto:cristalclaro04@gmail.com?subject=' + subject + '&body=' + body;
             
             // Open email client
             window.location.href = mailtoLink;
@@ -234,19 +234,19 @@ function getTimeSlots(dateString) {
     
     let startHour, startMinute;
     
-    // Monday (1) to Thursday (4): 9:30 AM to 7:00 PM
-    // Friday (5) to Sunday (0): 7:00 AM to 7:00 PM
-    if (dayOfWeek >= 1 && dayOfWeek <= 4) {
-        // Monday to Thursday: 9:30 AM to 7:00 PM
-        startHour = 9;
-        startMinute = 30;
+    // Saturday (6) to Monday (1): 5:00 AM to 6:00 PM (18:00)
+    // Tuesday (2) to Friday (5): 10:00 AM to 6:00 PM (18:00)
+    if (dayOfWeek === 6 || dayOfWeek === 0 || dayOfWeek === 1) {
+        // Saturday, Sunday, Monday: 5:00 AM to 6:00 PM
+        startHour = 5;
+        startMinute = 0;
     } else {
-        // Friday to Sunday: 7:00 AM to 7:00 PM
-        startHour = 7;
+        // Tuesday to Friday: 10:00 AM to 6:00 PM
+        startHour = 10;
         startMinute = 0;
     }
     
-    const endHour = 19; // 7:00 PM
+    const endHour = 18; // 6:00 PM
     const endMinute = 0;
     
     const timeSlots = [];
@@ -394,7 +394,7 @@ document.addEventListener('DOMContentLoaded', function() {
             );
             
             // Create mailto link
-            const mailtoLink = 'mailto:eslimjallow@gmail.com?subject=' + subject + '&body=' + body;
+            const mailtoLink = 'mailto:cristalclaro04@gmail.com?subject=' + subject + '&body=' + body;
             
             // Open email client
             window.location.href = mailtoLink;
