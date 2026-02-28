@@ -432,13 +432,28 @@ function showBookingSuccess() {
     }
 }
 
-// Observe service cards and feature items
+// Observe service cards, section titles, and feature items
 document.addEventListener('DOMContentLoaded', function() {
-    const animatedElements = document.querySelectorAll('.service-card, .feature-item, .contact-item, .process-step, .testimonial-card');
+    const animatedElements = document.querySelectorAll('.service-card, .feature-item, .contact-item, .process-step, .testimonial-card, .section-title');
     animatedElements.forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(20px)';
         el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(el);
     });
+
+    // Back to top button
+    const backToTop = document.querySelector('.back-to-top');
+    if (backToTop) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 400) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+        backToTop.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
 });
