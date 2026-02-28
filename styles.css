@@ -435,7 +435,7 @@ section {
     border-radius: 15px 15px 0 0;
     overflow: hidden;
     aspect-ratio: 4 / 3;
-    max-height: 180px;
+    min-height: 220px;
 }
 
 .service-card-image img {
@@ -1641,6 +1641,13 @@ section {
 
     .service-card {
         padding: 1.5rem;
+    }
+
+    .service-card-image {
+        margin-left: -1.5rem;
+        margin-right: -1.5rem;
+        margin-top: -1.5rem;
+        min-height: 260px;
     }
 
     .section-title {
