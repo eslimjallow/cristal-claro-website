@@ -1,3 +1,55 @@
+// Multi-language support
+var currentLang = 'es';
+
+function applyTranslations(lang) {
+    currentLang = lang || 'es';
+    if (typeof translations === 'undefined' || !translations[lang]) return;
+    const t = translations[lang];
+    const fallback = translations['es'] || t;
+
+    document.documentElement.lang = lang === 'zh' ? 'zh-Hans' : lang;
+
+    document.querySelectorAll('[data-i18n]').forEach(function(el) {
+        const key = el.getAttribute('data-i18n');
+        let val = t[key] || fallback[key];
+        if (val) {
+            if (val.indexOf('<') !== -1) el.innerHTML = val;
+            else el.textContent = val;
+        }
+    });
+
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el) {
+        const key = el.getAttribute('data-i18n-placeholder');
+        const val = t[key] || fallback[key];
+        if (val) el.placeholder = val;
+    });
+
+    document.querySelectorAll('[data-i18n-aria-label]').forEach(function(el) {
+        const key = el.getAttribute('data-i18n-aria-label');
+        const val = t[key] || fallback[key];
+        if (val) {
+            el.setAttribute('aria-label', val);
+            if (el.getAttribute('data-i18n-title') !== null) el.setAttribute('title', val);
+        }
+    });
+
+    try { localStorage.setItem('cristalclaro_lang', lang); } catch (e) {}
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const savedLang = (typeof localStorage !== 'undefined' && localStorage.getItem('cristalclaro_lang')) || 'es';
+    currentLang = savedLang;
+    applyTranslations(savedLang);
+
+    const langSelect = document.getElementById('langSelect');
+    if (langSelect) {
+        langSelect.value = savedLang;
+        langSelect.addEventListener('change', function() {
+            applyTranslations(this.value);
+        });
+    }
+});
+
 // Mobile menu toggle
 document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.querySelector('.mobile-menu-toggle');
@@ -279,9 +331,12 @@ function updateTimeSlots() {
     const selectedDate = fechaInput.value;
     const timeSlots = getTimeSlots(selectedDate);
     
-    // Clear existing options (except the first one)
-    horaSelect.innerHTML = '<option value="">Seleccione hora</option>';
-    horaAlternativaSelect.innerHTML = '<option value="">Seleccione hora alternativa</option>';
+    var t = (typeof translations !== 'undefined' && translations[currentLang]) ? translations[currentLang] : {};
+    var placeholders = (typeof translations !== 'undefined' && translations.es) ? translations.es : {};
+    var ph1 = (t.booking_hora_placeholder || placeholders.booking_hora_placeholder || 'Seleccione fecha primero');
+    var ph2 = (t.booking_hora_alt_placeholder || placeholders.booking_hora_alt_placeholder || 'Seleccione hora alternativa');
+    horaSelect.innerHTML = '<option value="">' + ph1 + '</option>';
+    horaAlternativaSelect.innerHTML = '<option value="">' + ph2 + '</option>';
     
     // Add time slots
     timeSlots.forEach(time => {
