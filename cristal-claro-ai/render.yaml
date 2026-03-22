@@ -1,0 +1,17 @@
+# Render Blueprint — set repo to your GitHub repo in the Render dashboard
+services:
+  - type: web
+    name: cristal-claro-api
+    runtime: node
+    rootDir: cristal-claro-ai/server
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: ADMIN_API_TOKEN
+        generateValue: true
+      - key: CLIENT_ORIGIN
+        sync: false

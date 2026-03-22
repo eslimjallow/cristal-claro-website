@@ -36,10 +36,29 @@ function applyTranslations(lang) {
     try { localStorage.setItem('cristalclaro_lang', lang); } catch (e) {}
 }
 
+/** Show chat app links when site-config.js sets a valid https URL */
+function initChatAppLinks() {
+    if (typeof window.CRISTAL_CLARO_CHAT_URL === 'undefined') {
+        window.CRISTAL_CLARO_CHAT_URL = '';
+    }
+    var url = (window.CRISTAL_CLARO_CHAT_URL || '').trim();
+    var ok = /^https?:\/\//i.test(url);
+    document.querySelectorAll('[data-chat-link]').forEach(function (el) {
+        if (ok) {
+            el.href = url;
+            el.classList.remove('chat-app-hidden');
+        } else {
+            el.classList.add('chat-app-hidden');
+            el.removeAttribute('href');
+        }
+    });
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     const savedLang = (typeof localStorage !== 'undefined' && localStorage.getItem('cristalclaro_lang')) || 'es';
     currentLang = savedLang;
     applyTranslations(savedLang);
+    initChatAppLinks();
 
     const langSelect = document.getElementById('langSelect');
     if (langSelect) {

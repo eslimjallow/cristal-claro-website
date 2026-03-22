@@ -460,6 +460,46 @@ html, body {
     box-shadow: 0 15px 40px rgba(0, 102, 204, 0.3);
 }
 
+/* AI chat app (linked when site-config.js URL is set) */
+.chat-app-hidden {
+    display: none !important;
+}
+
+.nav-chat-link:not(.chat-app-hidden) {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.btn-chat {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(0.9rem, 2.5vw, 1rem) clamp(1.5rem, 5vw, 2.5rem);
+    background: rgba(255, 255, 255, 0.14);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+    border-radius: 50px;
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    box-shadow: var(--shadow-lg);
+    min-height: 44px;
+    white-space: nowrap;
+    backdrop-filter: blur(6px);
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    transition: all 0.3s ease;
+}
+
+.hero-buttons .btn-chat {
+    width: fit-content;
+}
+
+.btn-chat:hover {
+    background: rgba(255, 255, 255, 0.28);
+    transform: translateY(-2px);
+}
+
 /* Section Styles */
 section {
     padding: 5rem 0;

@@ -7,6 +7,9 @@ Website profesional para Cristal Claro, empresa de limpieza de cristales en Las 
 - `index.html` - Página principal del sitio web
 - `styles.css` - Estilos y diseño responsive
 - `script.js` - Funcionalidades interactivas
+- `site-config.js` - URL del **asistente IA** (chat React). Si está vacío, los enlaces no se muestran.
+- `translations.js` - Textos multi-idioma
+- `cristal-claro-ai/` - App de chat + API (Vite + Express). Ver `cristal-claro-ai/DEPLOY.md` y `DEPLOY_CHATBOT.md`.
 - `README.md` - Este archivo
 
 ## Características
