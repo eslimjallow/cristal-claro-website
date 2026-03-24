@@ -28,6 +28,11 @@ app.use(
 );
 app.use(express.json({ limit: '1mb' }));
 
+// Root shows something useful (bare domain alone used to 404 as "Cannot GET /").
+app.get('/', (_req, res) => {
+  res.redirect(302, '/health');
+});
+
 app.get('/health', (_req, res) => {
   res.json({ ok: true, service: 'cristal-claro-ai', ts: new Date().toISOString() });
 });
