@@ -34,13 +34,22 @@ export async function chatCompletion(messages) {
     };
   }
 
-  const completion = await c.chat.completions.create({
-    model: process.env.OPENAI_MODEL || 'gpt-4o-mini',
-    messages: [{ role: 'system', content: SYSTEM_PROMPT }, ...messages],
-    max_tokens: 600,
-    temperature: 0.7,
-  });
+  try {
+    const completion = await c.chat.completions.create({
+      model: process.env.OPENAI_MODEL || 'gpt-4o-mini',
+      messages: [{ role: 'system', content: SYSTEM_PROMPT }, ...messages],
+      max_tokens: 600,
+      temperature: 0.7,
+    });
 
-  const reply = completion.choices[0]?.message?.content?.trim() || 'No pude generar respuesta.';
-  return { reply };
+    const reply = completion.choices[0]?.message?.content?.trim() || 'No pude generar respuesta.';
+    return { reply };
+  } catch (err) {
+    console.error('[openai]', err?.message || err);
+    return {
+      reply:
+        'Ahora mismo el asistente IA está temporalmente no disponible. Puedes pedir presupuesto por WhatsApp (+34 665 696 451) y te respondemos rápido.',
+      error: 'openai_unavailable',
+    };
+  }
 }
