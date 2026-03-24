@@ -48,7 +48,7 @@ export async function chatCompletion(messages) {
     console.error('[openai]', err?.message || err);
     return {
       reply:
-        'Ahora mismo el asistente IA está temporalmente no disponible. Puedes pedir presupuesto por WhatsApp (+34 665 696 451) y te respondemos rápido.',
+        'Ahora mismo el asistente IA está temporalmente no disponible. Puedes pedir presupuesto por WhatsApp (665 696 451) y te respondemos rápido.',
       error: 'openai_unavailable',
     };
   }

@@ -6,8 +6,10 @@ import { t } from '../lib/i18n';
 const WA_MSG = 'Hola, quiero información sobre limpieza de ventanas';
 
 function waUrl() {
-  const n = import.meta.env.VITE_WHATSAPP_NUMBER || '34600000000';
-  const digits = String(n).replace(/\D/g, '');
+  const n = import.meta.env.VITE_WHATSAPP_NUMBER || '665696451';
+  let digits = String(n).replace(/\D/g, '');
+  // If a local 9-digit ES number is provided, prepend country code for wa.me.
+  if (digits.length === 9) digits = `34${digits}`;
   return `https://wa.me/${digits}?text=${encodeURIComponent(WA_MSG)}`;
 }
 
