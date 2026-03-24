@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { HashRouter, Routes, Route, Link } from 'react-router-dom';
 import ChatWidget from './components/ChatWidget';
 import AdminDashboard from './pages/AdminDashboard';
 import { t } from './lib/i18n';
@@ -62,11 +62,11 @@ export default function App() {
   const [lang, setLang] = useState('es');
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/admin" element={<AdminDashboard />} />
         <Route path="*" element={<Landing lang={lang} onLangChange={setLang} />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }

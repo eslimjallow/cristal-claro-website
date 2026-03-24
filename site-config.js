@@ -1,8 +1,5 @@
 /**
- * Cristal Claro — Chat / AI app URL (deployed separately: Vercel, Netlify, etc.)
- *
- * 1. Deploy the React app in `cristal-claro-ai/client` (see cristal-claro-ai/DEPLOY.md).
- * 2. Paste the public URL below (no trailing slash).
- * 3. Push this file to GitHub so GitHub Pages shows the "Asistente IA" links.
- *
- * window.CRISTAL_CLARO_CHAT_URL = 'https://cristal-claro-website.onrender.com';
+ * Cristal Claro — Chat app URL (same repo, /chat/ on GitHub Pages).
+ * For a separate Vercel deploy, change the string below (no trailing slash).
+ */
+window.CRISTAL_CLARO_CHAT_URL = 'https://eslimjallow.github.io/cristal-claro-website/chat';

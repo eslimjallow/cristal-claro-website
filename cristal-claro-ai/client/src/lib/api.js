@@ -1,10 +1,20 @@
 /**
- * API base: set VITE_API_URL in production (e.g. https://api.yourapp.com).
- * In dev, Vite proxies /api → http://localhost:4000 (see vite.config.js).
+ * API base: window.__CRISTAL_API_URL__ (from public/api-config.js on GitHub Pages),
+ * or VITE_API_URL at build time, or /api in dev (Vite proxy).
  */
+function getApiBase() {
+  if (typeof window !== 'undefined' && window.__CRISTAL_API_URL__) {
+    const s = String(window.__CRISTAL_API_URL__).trim();
+    if (s) return s.replace(/\/$/, '');
+  }
+  const base = import.meta.env.VITE_API_URL?.replace(/\/$/, '');
+  if (base) return base;
+  return '';
+}
+
 export function apiUrl(path) {
   const p = path.startsWith('/') ? path : `/${path}`;
-  const base = import.meta.env.VITE_API_URL?.replace(/\/$/, '');
+  const base = getApiBase();
   if (base) return `${base}${p}`;
   return `/api${p}`;
 }
