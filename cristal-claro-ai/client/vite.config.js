@@ -8,10 +8,11 @@ const repoRoot = path.resolve(__dirname, '../..');
 const GH_PAGES_BASE = '/cristal-claro-website/chat/';
 
 export default defineConfig(({ command }) => ({
-  base: command === 'build' ? GH_PAGES_BASE : '/',
+  // Vercel should use default root paths; GitHub Pages needs the repo subpath.
+  base: command === 'build' && !process.env.VERCEL ? GH_PAGES_BASE : '/',
   plugins: [react()],
   build: {
-    outDir: path.join(repoRoot, 'chat'),
+    outDir: process.env.VERCEL ? 'dist' : path.join(repoRoot, 'chat'),
     emptyOutDir: true,
   },
   server: {
