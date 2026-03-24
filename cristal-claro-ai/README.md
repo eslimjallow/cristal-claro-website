@@ -51,6 +51,7 @@ Server runs at **http://localhost:4000**
 | `PORT` | No | Default `4000` |
 | `OPENAI_API_KEY` | Yes (for AI) | OpenAI key |
 | `OPENAI_MODEL` | No | Default `gpt-4o-mini` |
+| `OPENAI_MODEL_CANDIDATES` | No | Comma-separated failover list, e.g. `gpt-4o-mini,gpt-4o` |
 | `MONGODB_URI` | No | If omitted, JSON files are used |
 | `ADMIN_API_TOKEN` | Yes (admin) | Secret token for `/leads`, `/bookings`, `/analytics` |
 | `CLIENT_ORIGIN` | No | CORS origin(s), comma-separated. Default `http://localhost:5173` |
