@@ -14,15 +14,21 @@ import { requireAdmin } from './middleware/adminAuth.js';
 const app = express();
 const PORT = process.env.PORT || 4000;
 
-// CORS: allow Vite dev + production client URL
-const origins = (process.env.CLIENT_ORIGIN || 'http://localhost:5173')
-  .split(',')
-  .map((s) => s.trim())
-  .filter(Boolean);
+// CORS:
+// - If CLIENT_ORIGIN is set, only allow those origins.
+// - If it's not set (common on fresh Render envs), reflect the request origin so
+//   the browser can call us from GitHub Pages without CORS failures.
+const rawOrigins = process.env.CLIENT_ORIGIN;
+const origins = rawOrigins
+  ? rawOrigins
+      .split(',')
+      .map((s) => s.trim())
+      .filter(Boolean)
+  : null;
 
 app.use(
   cors({
-    origin: origins,
+    origin: origins || true,
     credentials: true,
   })
 );
