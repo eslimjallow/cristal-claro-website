@@ -60,6 +60,17 @@ export default function ChatWidget({ lang, onLangChange }) {
   const [typing, setTyping] = useState(false);
   const scrollRef = useRef(null);
 
+  // Allow deep-linking to open the chat automatically.
+  // Example: https://.../chat/?open=1
+  useEffect(() => {
+    try {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('open') === '1') setOpen(true);
+    } catch {
+      // ignore
+    }
+  }, []);
+
   useEffect(() => {
     requestAnimationFrame(() => {
       if (scrollRef.current) scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
