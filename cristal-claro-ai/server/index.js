@@ -56,7 +56,12 @@ app.get('/', (_req, res) => {
 });
 
 app.get('/health', (_req, res) => {
-  res.json({ ok: true, service: 'cristal-claro-ai', ts: new Date().toISOString() });
+  res.json({
+    ok: true,
+    service: 'cristal-claro-ai',
+    corsMiddlewareApplied: true,
+    ts: new Date().toISOString(),
+  });
 });
 
 app.use('/chat', chatRouter);
