@@ -34,6 +34,22 @@ app.use(
 );
 app.use(express.json({ limit: '1mb' }));
 
+// Extra hardening for GitHub Pages -> Render requests:
+// Some Render deployments end up without the expected CORS headers for the
+// browser origin. We explicitly reflect the request origin and answer OPTIONS
+// preflight so the frontend doesn't fail with "Algo salió mal".
+app.use((req, res, next) => {
+  const origin = req.headers.origin;
+  if (origin) res.setHeader('Access-Control-Allow-Origin', origin);
+  res.setHeader('Vary', 'Origin');
+  res.setHeader('Access-Control-Allow-Credentials', 'true');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  res.setHeader('Access-Control-Allow-Methods', 'GET,POST,PATCH,DELETE,OPTIONS');
+
+  if (req.method === 'OPTIONS') return res.sendStatus(204);
+  next();
+});
+
 // Root shows something useful (bare domain alone used to 404 as "Cannot GET /").
 app.get('/', (_req, res) => {
   res.redirect(302, '/health');
