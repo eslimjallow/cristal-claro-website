@@ -178,19 +178,20 @@ html, body {
     border-left: 1px solid var(--border-color);
 }
 
-/* Shown only on small screens — TikTok, Instagram, Facebook, email under logo */
+/* Inline on mobile only — same row as logo (hidden on desktop) */
 .mobile-quick-social {
     display: none;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 0.65rem;
-    padding: 0.35rem 0 0.55rem;
-    border-top: 1px solid rgba(15, 23, 42, 0.08);
+    flex-wrap: nowrap;
+    gap: 0.3rem;
+    min-width: 0;
+    flex: 1;
 }
 
 .mobile-quick-social .social-icon {
     margin: 0;
+    flex-shrink: 0;
 }
 
 .social-icon {
@@ -1596,15 +1597,40 @@ section {
 
 @media (max-width: 768px) {
     .navbar {
-        --navbar-stack-height: 118px;
+        --navbar-stack-height: 72px;
+    }
+
+    .nav-content {
+        gap: 0.35rem;
+        flex-wrap: nowrap;
+        align-items: center;
+        padding: 0.55rem 0;
+    }
+
+    .logo {
+        flex-shrink: 0;
     }
 
     .mobile-menu-toggle {
         display: flex;
+        flex-shrink: 0;
+        margin-left: 0;
     }
 
     .mobile-quick-social {
         display: flex;
+        padding: 0;
+        border: none;
+    }
+
+    .mobile-quick-social .social-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .mobile-quick-social .social-icon svg {
+        width: 16px;
+        height: 16px;
     }
 
     .nav-links .social-links {
@@ -1782,7 +1808,7 @@ section {
 
 @media (max-width: 480px) {
     .navbar {
-        --navbar-stack-height: 108px;
+        --navbar-stack-height: 64px;
         padding: 0.5rem 0;
     }
 
