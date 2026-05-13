@@ -238,6 +238,12 @@ html, body {
     opacity: 0.9;
 }
 
+/* Instagram glyph fills the circle more than other logos — slightly smaller SVG */
+.social-icon[aria-label="Instagram"] svg {
+    width: 17px;
+    height: 17px;
+}
+
 .social-icon--email {
     color: var(--primary-color);
     background: #e8f2fc;
@@ -251,6 +257,8 @@ html, body {
 .social-icon--email svg {
     flex-shrink: 0;
 }
+
+.visually-hidden {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -1289,20 +1297,22 @@ section {
     color: #ffffff;
 }
 
-/* Instagram icon gradient in contact */
-.contact-social-link:last-child svg {
+/* Instagram icon gradient in contact (second link) */
+.contact-social-link:nth-child(2) svg {
+    width: 17px;
+    height: 17px;
     background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 
-.contact-social-link:last-child:hover {
+.contact-social-link:nth-child(2):hover {
     background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
     color: #ffffff;
 }
 
-.contact-social-link:last-child:hover svg {
+.contact-social-link:nth-child(2):hover svg {
     -webkit-text-fill-color: #ffffff;
     background: none;
 }
@@ -1631,6 +1641,11 @@ section {
     .mobile-quick-social .social-icon svg {
         width: 16px;
         height: 16px;
+    }
+
+    .mobile-quick-social .social-icon[aria-label="Instagram"] svg {
+        width: 14px;
+        height: 14px;
     }
 
     .nav-links .social-links {
