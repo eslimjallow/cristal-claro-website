@@ -121,6 +121,8 @@ const translations = {
     footer_copyright: '© 2026 Cristal Claro. Todos los derechos reservados.',
     aria_menu: 'Abrir menú',
     aria_close: 'Cerrar',
+    aria_quick_social: 'Accesos a redes sociales y correo',
+    aria_email_link: 'Enviar correo a Cristal Claro',
     whatsapp_btn: 'WhatsApp',
   },
   en: {
@@ -244,6 +246,8 @@ const translations = {
     footer_copyright: '© 2026 Cristal Claro. All rights reserved.',
     aria_menu: 'Toggle menu',
     aria_close: 'Close',
+    aria_quick_social: 'Social links and email',
+    aria_email_link: 'Send email to Cristal Claro',
     whatsapp_btn: 'WhatsApp',
   },
   fr: {
@@ -367,6 +371,8 @@ const translations = {
     footer_copyright: '© 2026 Cristal Claro. Tous droits réservés.',
     aria_menu: 'Ouvrir le menu',
     aria_close: 'Fermer',
+    aria_quick_social: 'Réseaux sociaux et e-mail',
+    aria_email_link: 'Envoyer un e-mail à Cristal Claro',
     whatsapp_btn: 'WhatsApp',
   },
   zh: {
@@ -490,6 +496,8 @@ const translations = {
     footer_copyright: '© 2026 Cristal Claro. 版权所有。',
     aria_menu: '打开菜单',
     aria_close: '关闭',
+    aria_quick_social: '社交媒体与邮箱',
+    aria_email_link: '向 Cristal Claro 发送邮件',
     whatsapp_btn: 'WhatsApp',
   },
 };

@@ -178,6 +178,21 @@ html, body {
     border-left: 1px solid var(--border-color);
 }
 
+/* Shown only on small screens — TikTok, Instagram, Facebook, email under logo */
+.mobile-quick-social {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    padding: 0.35rem 0 0.55rem;
+    border-top: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.mobile-quick-social .social-icon {
+    margin: 0;
+}
+
 .social-icon {
     display: flex;
     align-items: center;
@@ -222,7 +237,19 @@ html, body {
     opacity: 0.9;
 }
 
-.visually-hidden {
+.social-icon--email {
+    color: var(--primary-color);
+    background: #e8f2fc;
+}
+
+.social-icon--email:hover {
+    background: var(--primary-color);
+    color: #ffffff;
+}
+
+.social-icon--email svg {
+    flex-shrink: 0;
+}
     position: absolute;
     width: 1px;
     height: 1px;
@@ -1568,13 +1595,25 @@ section {
 }
 
 @media (max-width: 768px) {
+    .navbar {
+        --navbar-stack-height: 118px;
+    }
+
     .mobile-menu-toggle {
         display: flex;
     }
 
+    .mobile-quick-social {
+        display: flex;
+    }
+
+    .nav-links .social-links {
+        display: none !important;
+    }
+
     .nav-links {
         position: fixed;
-        top: 70px;
+        top: var(--navbar-stack-height);
         left: 0;
         right: 0;
         background: white;
@@ -1585,7 +1624,7 @@ section {
         transform: translateX(-100%);
         transition: transform 0.3s ease;
         z-index: 999;
-        max-height: calc(100vh - 70px);
+        max-height: calc(100vh - var(--navbar-stack-height));
         overflow-y: auto;
     }
 
@@ -1622,9 +1661,9 @@ section {
     }
 
     .hero {
-        margin-top: 60px;
-        min-height: calc(100vh - 60px);
-        min-height: calc(100dvh - 60px);
+        margin-top: var(--navbar-stack-height);
+        min-height: calc(100vh - var(--navbar-stack-height));
+        min-height: calc(100dvh - var(--navbar-stack-height));
     }
 
     .services-grid {
@@ -1742,6 +1781,11 @@ section {
 }
 
 @media (max-width: 480px) {
+    .navbar {
+        --navbar-stack-height: 108px;
+        padding: 0.5rem 0;
+    }
+
     .container {
         padding: 0 15px;
     }
@@ -1751,18 +1795,14 @@ section {
         max-height: 35px;
     }
 
-    .navbar {
-        padding: 0.5rem 0;
-    }
-
     .nav-content {
         padding: 0.5rem 0;
     }
 
     .hero {
-        margin-top: 55px;
-        min-height: calc(100vh - 55px);
-        min-height: calc(100dvh - 55px);
+        margin-top: var(--navbar-stack-height);
+        min-height: calc(100vh - var(--navbar-stack-height));
+        min-height: calc(100dvh - var(--navbar-stack-height));
     }
 
     .hero-content {
@@ -1993,6 +2033,7 @@ img {
 /* Print styles */
 @media print {
     .navbar,
+    .mobile-quick-social,
     .floating-whatsapp,
     .mobile-menu-toggle {
         display: none;
